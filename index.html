@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<input type="file"  accept="image/*" name="image" id="file"  onchange="load(event)" >
+<p><img id="output" src="" alt="" height="500px" width="300px"></p>
+
+<script>
+var load = function(event) {
+    console.log(event)
+    console.log(event.target.files[0].name)
+	var image = document.getElementById('output');
+    var nio = event.target.files[0].name ;
+    console.log(event.target.files[0].name)
+    console.log(event.target.files[0].lastModifiedDate);
+    // var comp = document.createElement('img');
+    // comp.setAttribute('src' , `${event.target.files[0].name}`);
+    // var can = document.getElementById('coam')
+    // can.appendChild(comp)
+	image.src = URL.createObjectURL(event.target.files[0]);
+    console.log(image.src)
+    // // event.target.disabled = true;
+};
+</script>
+</body>
+</html>
